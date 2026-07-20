@@ -19,13 +19,13 @@ const ContactSection = () => {
               Represented inquiries
             </p>
             <a
-              href="mailto:hello@loicdevaux.com"
+              href="mailto:hello@loic-devaux.art"
               className="block font-sans text-3xl uppercase tracking-tight text-secondary-foreground hover:text-mustard transition-colors sm:text-4xl"
             >
-              hello@loicdevaux.com
+              hello@loic-devaux.art
             </a>
             <a
-              href="https://instagram.com/loic_devaux"
+              href="https://www.instagram.com/loic_devaux/"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-block font-mono text-xs uppercase tracking-[0.2em] text-secondary-foreground/70 hover:text-secondary-foreground transition-colors"

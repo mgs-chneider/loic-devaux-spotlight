@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 
 const navItems = [
   { label: "About", href: "/#about" },
@@ -72,6 +72,19 @@ const SiteHeader = ({ overHero = true }: { overHero?: boolean }) => {
               {item.label}
             </a>
           ))}
+          <a
+            href="https://www.instagram.com/loic_devaux/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Loïc Devaux on Instagram"
+            className={`transition-colors duration-300 ${
+              scrolled
+                ? "text-muted-foreground hover:text-foreground"
+                : "text-background/85 hover:text-background"
+            }`}
+          >
+            <Instagram size={17} strokeWidth={1.75} />
+          </a>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -105,6 +118,16 @@ const SiteHeader = ({ overHero = true }: { overHero?: boolean }) => {
                 {item.label}
               </a>
             ))}
+            <a
+              href="https://www.instagram.com/loic_devaux/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Loïc Devaux on Instagram"
+              className="flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 font-mono"
+            >
+              <Instagram size={16} strokeWidth={1.75} />
+              Instagram
+            </a>
           </div>
         </nav>
       </div>
