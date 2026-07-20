@@ -19,6 +19,7 @@ export default {
         mono: ["IBM Plex Mono", "monospace"],
       },
       colors: {
+        mustard: "#D9A441",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

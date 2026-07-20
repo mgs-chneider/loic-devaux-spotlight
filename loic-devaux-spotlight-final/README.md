@@ -10,16 +10,16 @@ Simple landing page for the Belgian painter Loïc Devaux.
 
 ## Local development
 
-​```sh
+```sh
 npm install
 npm run dev
-​```
+```
 
 ## Build
 
-​```sh
+```sh
 npm run build
-​```
+```
 
 Output goes to `dist/`.
 
