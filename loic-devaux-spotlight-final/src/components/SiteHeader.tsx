@@ -2,20 +2,21 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
-const SiteHeader = () => {
-  const [scrolled, setScrolled] = useState(false);
+const SiteHeader = ({ overHero = true }: { overHero?: boolean }) => {
+  const [scrolled, setScrolled] = useState(!overHero);
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!overHero) return;
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [overHero]);
 
   // Close menu on outside click
   useEffect(() => {
@@ -39,11 +40,19 @@ const SiteHeader = () => {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Brand – left */}
-        <a href="#hero" className="block">
-          <h2 className="text-xl md:text-2xl font-sans tracking-[0.1em] text-foreground leading-tight">
+        <a href="/" className="block">
+          <h2
+            className={`text-xl md:text-2xl font-sans tracking-[0.1em] leading-tight transition-colors duration-500 ${
+              scrolled ? "text-foreground" : "text-background drop-shadow"
+            }`}
+          >
             LD
           </h2>
-          <p className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-mono font-medium">
+          <p
+            className={`text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-mono font-medium transition-colors duration-500 ${
+              scrolled ? "text-muted-foreground" : "text-background/80"
+            }`}
+          >
             Loïc Devaux
           </p>
         </a>
@@ -54,7 +63,11 @@ const SiteHeader = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 font-mono"
+              className={`text-xs tracking-[0.2em] uppercase transition-colors duration-300 font-mono ${
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-background/85 hover:text-background"
+              }`}
             >
               {item.label}
             </a>
@@ -64,7 +77,9 @@ const SiteHeader = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground p-1"
+          className={`md:hidden p-1 transition-colors duration-500 ${
+            scrolled ? "text-foreground" : "text-background"
+          }`}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
