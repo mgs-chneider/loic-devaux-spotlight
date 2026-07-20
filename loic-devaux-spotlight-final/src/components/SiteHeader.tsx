@@ -40,21 +40,30 @@ const SiteHeader = ({ overHero = true }: { overHero?: boolean }) => {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Brand – left */}
-        <a href="/" className="block">
-          <h2
-            className={`text-xl md:text-2xl font-sans tracking-[0.1em] leading-tight transition-colors duration-500 ${
-              scrolled ? "text-foreground" : "text-background drop-shadow"
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src="/apple-touch-icon.png"
+            alt=""
+            className={`h-9 w-9 rounded-full object-cover ring-2 transition-all duration-500 ${
+              scrolled ? "ring-border" : "ring-background/70"
             }`}
-          >
-            LD
-          </h2>
-          <p
-            className={`text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-mono font-medium transition-colors duration-500 ${
-              scrolled ? "text-muted-foreground" : "text-background/80"
-            }`}
-          >
-            Loïc Devaux
-          </p>
+          />
+          <div>
+            <h2
+              className={`text-xl md:text-2xl font-sans tracking-[0.1em] leading-tight transition-colors duration-500 ${
+                scrolled ? "text-foreground" : "text-background drop-shadow"
+              }`}
+            >
+              LD
+            </h2>
+            <p
+              className={`text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-mono font-medium transition-colors duration-500 ${
+                scrolled ? "text-muted-foreground" : "text-background/80"
+              }`}
+            >
+              Loïc Devaux
+            </p>
+          </div>
         </a>
 
         {/* Desktop Nav */}
