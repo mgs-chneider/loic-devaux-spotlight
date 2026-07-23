@@ -27,14 +27,14 @@ const AboutSection = () => {
             About the artist
           </p>
           <p className="font-serif text-xl leading-relaxed text-foreground sm:text-2xl">
-            Loïc Devaux paints from Antwerp, building his scenes out of the
-            objects and images that already surround us — mid-century
-            furniture, sports gear, packaging, patterned textiles — and
+            Loïc Devaux paints from Antwerp, Belgium, building his scenes out
+            of the objects and images that already surround us — kitchenware,
+            mid-century furniture, athletes, patterned textiles — and
             reassembling them into worlds that feel both familiar and faintly
-            mythic. Working mostly in oil stick, he returns again and again to
-            checkered and plaid patterns, using repetition as a way of
-            thinking about routine and domestic life. His paintings have been
-            shown in Belgium, the United States, and South Korea.
+            mythic. Working mostly in oil stick, he returns to checkered and
+            plaid patterns, using repetition as a way of reflecting on
+            routine and domestic life. His paintings have been shown in
+            Belgium, the United States, South Korea, Greece and Italy.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
