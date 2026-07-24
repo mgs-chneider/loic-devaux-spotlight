@@ -35,7 +35,7 @@ const WorksSection = () => {
     <>
       <div className="checker-strip h-4 w-full text-mustard" aria-hidden="true" />
 
-      <section id="works" className="py-28 md:py-40 px-6 bg-background">
+      <section id="works" className="py-32 md:py-48 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div
             ref={headerRef}
@@ -49,33 +49,33 @@ const WorksSection = () => {
             <h2 className="font-sans text-4xl md:text-5xl text-foreground">Selected Works</h2>
           </div>
 
-          {/* 1 – 2 – 1 */}
+          {/* Captain Fil (own format, standalone) – Paradise + Plumlee (middle pair) – Home Run (closing) */}
           <div
             ref={gridRef}
-            className={`mx-auto flex max-w-[1100px] flex-col gap-8 md:gap-12 transition-all duration-1000 ease-out delay-200 ${
+            className={`mx-auto flex max-w-3xl flex-col gap-16 md:gap-24 transition-all duration-1000 ease-out delay-200 ${
               gridVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <WorkImage src={work1} alt="Home Run, 2025, by Loïc Devaux" caption={captions.home} />
+            <WorkImage
+              src={work3}
+              alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
+              caption={captions.captain}
+            />
 
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-10">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-8">
               <WorkImage
                 src={work2}
                 alt="Another Day In Paradise, 2025, by Loïc Devaux"
                 caption={captions.paradise}
               />
               <WorkImage
-                src={work3}
-                alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
-                caption={captions.captain}
+                src={work4}
+                alt="Plumlee Posse Study, 2026, by Loïc Devaux"
+                caption={captions.plumlee}
               />
             </div>
 
-            <WorkImage
-              src={work4}
-              alt="Plumlee Posse Study, 2026, by Loïc Devaux"
-              caption={captions.plumlee}
-            />
+            <WorkImage src={work1} alt="Home Run, 2025, by Loïc Devaux" caption={captions.home} />
           </div>
         </div>
       </section>
