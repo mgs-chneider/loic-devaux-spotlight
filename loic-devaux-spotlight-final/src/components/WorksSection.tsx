@@ -13,16 +13,30 @@ const captions: Record<"home" | "paradise" | "captain" | "plumlee", Caption> = {
   plumlee: { title: "Plumlee Posse Study", year: "2026", medium: "Oil stick on canvas", dimensions: "200 × 230 cm" },
 };
 
-const WorkImage = ({ src, alt, caption }: { src: string; alt: string; caption: Caption }) => (
-  <div className="group relative overflow-hidden shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]">
-    <img src={src} alt={alt} className="block w-full h-auto" />
-    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-6">
-      <p className="font-serif italic text-lg leading-snug text-background sm:text-xl">
-        {caption.title}
-      </p>
-      <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-background/80">
-        {caption.year} · {caption.medium} · {caption.dimensions}
-      </p>
+const WorkImage = ({
+  src,
+  alt,
+  caption,
+  widthClass,
+  alignClass,
+}: {
+  src: string;
+  alt: string;
+  caption: Caption;
+  widthClass: string;
+  alignClass: string;
+}) => (
+  <div className={`${widthClass} ${alignClass}`}>
+    <div className="group relative overflow-hidden shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]">
+      <img src={src} alt={alt} className="block w-full h-auto" />
+      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-6">
+        <p className="font-serif italic text-lg leading-snug text-background sm:text-xl">
+          {caption.title}
+        </p>
+        <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-background/80">
+          {caption.year} · {caption.medium} · {caption.dimensions}
+        </p>
+      </div>
     </div>
   </div>
 );
@@ -49,7 +63,8 @@ const WorksSection = () => {
             <h2 className="font-sans text-4xl md:text-5xl text-foreground">Selected Works</h2>
           </div>
 
-          {/* Captain Fil (own format, standalone) – Paradise + Plumlee (middle pair) – Home Run (closing) */}
+          {/* Widths are proportional to each canvas's real width (Captain Fil's 350 cm = 100%),
+              so the displayed area mirrors the actual size of each painting. */}
           <div
             ref={gridRef}
             className={`mx-auto flex max-w-3xl flex-col gap-16 md:gap-24 transition-all duration-1000 ease-out delay-200 ${
@@ -60,22 +75,33 @@ const WorksSection = () => {
               src={work3}
               alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
               caption={captions.captain}
+              widthClass="w-full"
+              alignClass="mx-auto"
             />
 
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-8">
-              <WorkImage
-                src={work2}
-                alt="Another Day In Paradise, 2025, by Loïc Devaux"
-                caption={captions.paradise}
-              />
-              <WorkImage
-                src={work4}
-                alt="Plumlee Posse Study, 2026, by Loïc Devaux"
-                caption={captions.plumlee}
-              />
-            </div>
+            <WorkImage
+              src={work2}
+              alt="Another Day In Paradise, 2025, by Loïc Devaux"
+              caption={captions.paradise}
+              widthClass="w-full sm:w-[51%]"
+              alignClass="ml-0"
+            />
 
-            <WorkImage src={work1} alt="Home Run, 2025, by Loïc Devaux" caption={captions.home} />
+            <WorkImage
+              src={work4}
+              alt="Plumlee Posse Study, 2026, by Loïc Devaux"
+              caption={captions.plumlee}
+              widthClass="w-full sm:w-[66%]"
+              alignClass="ml-auto"
+            />
+
+            <WorkImage
+              src={work1}
+              alt="Home Run, 2025, by Loïc Devaux"
+              caption={captions.home}
+              widthClass="w-full sm:w-[66%]"
+              alignClass="mx-auto"
+            />
           </div>
         </div>
       </section>
