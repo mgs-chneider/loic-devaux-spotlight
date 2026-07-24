@@ -63,47 +63,48 @@ const WorksSection = () => {
             <h2 className="font-sans text-4xl md:text-5xl text-foreground">Selected Works</h2>
           </div>
 
-          {/* Captain Fil and Home Run stay on text width; the Paradise/Plumlee
-              pair is allowed a wider container so it can breathe as a true pair. */}
+          {/* All widths are fixed (rem-based), not percentages of a parent —
+              so proportions stay true and comparable across the whole set,
+              no matter how wide each row's container is.
+              Reference: Captain Fil's 350 cm real width = 48rem = 100%. */}
           <div
             ref={gridRef}
-            className={`flex flex-col gap-16 md:gap-24 transition-all duration-1000 ease-out delay-200 ${
+            className={`flex flex-col items-center gap-16 md:gap-24 transition-all duration-1000 ease-out delay-200 ${
               gridVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <div className="mx-auto w-full max-w-3xl">
-              <WorkImage
-                src={work3}
-                alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
-                caption={captions.captain}
-                widthClass="w-full"
-                alignClass="mx-auto"
-              />
-            </div>
+            <WorkImage
+              src={work3}
+              alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
+              caption={captions.captain}
+              widthClass="w-full max-w-[48rem]"
+              alignClass=""
+            />
 
-            <div className="mx-auto w-full max-w-3xl">
-              <WorkImage
-                src={work1}
-                alt="Home Run, 2025, by Loïc Devaux"
-                caption={captions.home}
-                widthClass="w-full sm:w-[66%]"
-                alignClass="mx-auto"
-              />
-            </div>
+            <WorkImage
+              src={work1}
+              alt="Home Run, 2025, by Loïc Devaux"
+              caption={captions.home}
+              widthClass="w-full max-w-[32rem]"
+              alignClass=""
+            />
 
-            <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 md:gap-10 md:px-0">
+            {/* Paradise + Plumlee: sizes true to their real canvas widths
+                (180 cm / 230 cm), vertically centered against each other —
+                the size difference reads as tension rather than a rail. */}
+            <div className="flex w-full max-w-[59rem] flex-col items-center gap-8 sm:flex-row sm:items-center sm:justify-center md:gap-10">
               <WorkImage
                 src={work2}
                 alt="Another Day In Paradise, 2025, by Loïc Devaux"
                 caption={captions.paradise}
-                widthClass="w-full"
+                widthClass="w-full max-w-[24.5rem]"
                 alignClass=""
               />
               <WorkImage
                 src={work4}
                 alt="Plumlee Posse Study, 2026, by Loïc Devaux"
                 caption={captions.plumlee}
-                widthClass="w-full"
+                widthClass="w-full max-w-[32rem]"
                 alignClass=""
               />
             </div>
