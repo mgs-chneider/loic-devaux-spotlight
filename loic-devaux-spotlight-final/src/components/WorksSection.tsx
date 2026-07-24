@@ -29,7 +29,7 @@ const WorkImage = ({
   <div className={`${widthClass} ${alignClass}`}>
     <div className="group relative overflow-hidden shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]">
       <img src={src} alt={alt} className="block w-full h-auto" />
-      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-6">
+      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/90 from-0% via-foreground/20 via-20% to-transparent to-45% p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-6">
         <p className="font-serif italic text-lg leading-snug text-background sm:text-xl">
           {caption.title}
         </p>
@@ -63,45 +63,50 @@ const WorksSection = () => {
             <h2 className="font-sans text-4xl md:text-5xl text-foreground">Selected Works</h2>
           </div>
 
-          {/* Widths are proportional to each canvas's real width (Captain Fil's 350 cm = 100%),
-              so the displayed area mirrors the actual size of each painting. */}
+          {/* Captain Fil and Home Run stay on text width; the Paradise/Plumlee
+              pair is allowed a wider container so it can breathe as a true pair. */}
           <div
             ref={gridRef}
-            className={`mx-auto flex max-w-3xl flex-col gap-16 md:gap-24 transition-all duration-1000 ease-out delay-200 ${
+            className={`flex flex-col gap-16 md:gap-24 transition-all duration-1000 ease-out delay-200 ${
               gridVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <WorkImage
-              src={work3}
-              alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
-              caption={captions.captain}
-              widthClass="w-full"
-              alignClass="mx-auto"
-            />
+            <div className="mx-auto w-full max-w-3xl">
+              <WorkImage
+                src={work3}
+                alt="Captain Fil & Sailor George Rescue a Castaway, 2025, by Loïc Devaux"
+                caption={captions.captain}
+                widthClass="w-full"
+                alignClass="mx-auto"
+              />
+            </div>
 
-            <WorkImage
-              src={work1}
-              alt="Home Run, 2025, by Loïc Devaux"
-              caption={captions.home}
-              widthClass="w-full sm:w-[66%]"
-              alignClass="ml-0"
-            />
+            <div className="mx-auto w-full max-w-3xl">
+              <WorkImage
+                src={work1}
+                alt="Home Run, 2025, by Loïc Devaux"
+                caption={captions.home}
+                widthClass="w-full sm:w-[66%]"
+                alignClass="mx-auto"
+              />
+            </div>
 
-            <WorkImage
-              src={work4}
-              alt="Plumlee Posse Study, 2026, by Loïc Devaux"
-              caption={captions.plumlee}
-              widthClass="w-full sm:w-[66%]"
-              alignClass="ml-auto"
-            />
-
-            <WorkImage
-              src={work2}
-              alt="Another Day In Paradise, 2025, by Loïc Devaux"
-              caption={captions.paradise}
-              widthClass="w-full sm:w-[51%]"
-              alignClass="mx-auto"
-            />
+            <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 md:gap-10 md:px-0">
+              <WorkImage
+                src={work2}
+                alt="Another Day In Paradise, 2025, by Loïc Devaux"
+                caption={captions.paradise}
+                widthClass="w-full"
+                alignClass=""
+              />
+              <WorkImage
+                src={work4}
+                alt="Plumlee Posse Study, 2026, by Loïc Devaux"
+                caption={captions.plumlee}
+                widthClass="w-full"
+                alignClass=""
+              />
+            </div>
           </div>
         </div>
       </section>
