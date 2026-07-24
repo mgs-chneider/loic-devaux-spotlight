@@ -13,7 +13,7 @@ const HeroSection = () => {
           alt="Loïc Devaux photographed among his paintings"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 from-0% via-foreground/35 via-30% to-transparent to-60%" />
       </div>
 
       <div
