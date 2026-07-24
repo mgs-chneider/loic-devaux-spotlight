@@ -80,10 +80,10 @@ const WorksSection = () => {
             />
 
             <WorkImage
-              src={work2}
-              alt="Another Day In Paradise, 2025, by Loïc Devaux"
-              caption={captions.paradise}
-              widthClass="w-full sm:w-[51%]"
+              src={work1}
+              alt="Home Run, 2025, by Loïc Devaux"
+              caption={captions.home}
+              widthClass="w-full sm:w-[66%]"
               alignClass="ml-0"
             />
 
@@ -96,10 +96,10 @@ const WorksSection = () => {
             />
 
             <WorkImage
-              src={work1}
-              alt="Home Run, 2025, by Loïc Devaux"
-              caption={captions.home}
-              widthClass="w-full sm:w-[66%]"
+              src={work2}
+              alt="Another Day In Paradise, 2025, by Loïc Devaux"
+              caption={captions.paradise}
+              widthClass="w-full sm:w-[51%]"
               alignClass="mx-auto"
             />
           </div>
