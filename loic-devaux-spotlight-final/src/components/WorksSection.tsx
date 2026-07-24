@@ -92,19 +92,19 @@ const WorksSection = () => {
             {/* Paradise + Plumlee: sizes true to their real canvas widths
                 (180 cm / 230 cm), vertically centered against each other —
                 the size difference reads as tension rather than a rail. */}
-            <div className="flex w-full max-w-[59rem] flex-col items-center gap-8 sm:flex-row sm:items-center sm:justify-center md:gap-10">
+            <div className="flex w-full max-w-[59rem] flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center md:gap-10">
               <WorkImage
                 src={work2}
                 alt="Another Day In Paradise, 2025, by Loïc Devaux"
                 caption={captions.paradise}
-                widthClass="w-full max-w-[24.5rem]"
+                widthClass="w-full max-w-[24.5rem] lg:w-[24.5rem] lg:shrink-0"
                 alignClass=""
               />
               <WorkImage
                 src={work4}
                 alt="Plumlee Posse Study, 2026, by Loïc Devaux"
                 caption={captions.plumlee}
-                widthClass="w-full max-w-[32rem]"
+                widthClass="w-full max-w-[32rem] lg:w-[32rem] lg:shrink-0"
                 alignClass=""
               />
             </div>
